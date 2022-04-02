@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  --clr-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --clr-soft-red: hsl(14, 88%, 65%);
+  --clr-soft-violet: hsl(273, 75%, 66%);
+  --clr-soft-blue: hsl(240, 73%, 65%);
+  --clr-very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --clr-dark-grayish-blue: hsl(240, 6%, 50%);
+  --clr-light-grayish-blue: hsl(240, 5%, 91%);
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+}
+.wrapper {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    var(--clr-soft-violet),
+    var(--clr-soft-blue)
+  );
+  background-size: cover;
+}
+.container {
+  border-radius: 20px;
+  position: relative;
+  width: 100%;
+  margin: 1rem;
+  background-color: white;
+  padding: 2rem 1rem;
+}
+.icon {
+  position: absolute;
+  width: 80%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  filter: drop-shadow(3px 30px 1px rgb(0 0 0 /0.1));
+}
+.faq {
+  margin-top: 6rem;
+}
+.title h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.question {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+}
+.sub-question {
+  display: flex;
+
+  gap: 1rem;
+  justify-content: space-between;
+}
+.sub-question strong {
+  font-weight: 400;
+}
+.sub-question img {
+  width: 10px;
+  height: 10px;
+}
+.sub-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.question.active .sub-answer {
+  max-height: 300px;
+  transition: max-height 1.4s ease-in-out;
+}
+.question.active .sub-question strong {
+  font-weight: 700;
+}
+.question.active .sub-question img {
+  transform: rotate(180deg);
+}
+@media (min-width: 870px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 80%;
+  }
+  .header {
+    width: 50%;
+  }
+  .faq {
+    width: 50%;
+    padding-right: 5rem;
+    margin-top: 0;
+  }
+  .title h1 {
+    text-align: left;
+  }
+  .icon {
+    top: 50%;
+    left: 0;
+    width: 45%;
+    bottom: auto;
+    right: 0;
+    transform: translate(-15%, -50%);
+    filter: drop-shadow(0px 50px 1px rgb(0 0 0 /0.05));
+  }
+  .sub-question {
+    justify-content: none;
+  }
+  .sub-question strong:hover {
+    color: red;
+    cursor: pointer;
+  }
+}
