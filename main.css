@@ -37,9 +37,16 @@ body {
   border-radius: 20px;
   position: relative;
   width: 100%;
+
   margin: 1rem;
   background-color: white;
   padding: 2rem 1rem;
+}
+.header {
+  height: 30%;
+}
+.faq {
+  height: 70%;
 }
 .icon {
   position: absolute;
@@ -67,12 +74,12 @@ body {
 }
 .sub-question {
   display: flex;
-
   gap: 1rem;
   justify-content: space-between;
 }
 .sub-question strong {
   font-weight: 400;
+  font-size: 1rem;
 }
 .sub-question img {
   width: 10px;
